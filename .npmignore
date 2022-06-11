@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+package-lock.json
+tsconfig.json
+.gitignore
+
+# ignore the .ts files
+*.ts
+
+# include the .d.ts files
+!*.d.ts
