@@ -7,18 +7,10 @@ import { CLIAssembly } from './assembly';
 
 async function LoadAssembly(packagePath: string) {
   const assembly = new CLIAssembly(packagePath);
-  
-  await new Promise((finish) => assembly.$load.pipe(first()).subscribe(() => {
-  
-    assembly.bundle?.export();
 
-    finish(null);
+  const bundle = await assembly.getBundlePromise();
   
-  }));
-
-  console.log('done')
-
-  return
+  bundle.export();
 
 }
 

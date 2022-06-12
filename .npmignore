@@ -3,6 +3,7 @@ node_modules/
 package-lock.json
 tsconfig.json
 .gitignore
+examples/
 
 # ignore the .ts files
 *.ts

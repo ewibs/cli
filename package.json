@@ -1,6 +1,6 @@
 {
   "name": "@ewibs/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI for the ewibs system",
   "type": "commonjs",
   "repository": {
@@ -10,14 +10,14 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug:cli": "tsnd --respawn cli.ts",
+    "debug": "npm run prepare && npm link && ewibs ./examples/simple/simple.ewibs",
     "prepare": "rm -rf lib && tsc && chmod +x lib/cli.js"
   },
   "devDependencies": {
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@ewibs/assembly": "^0.0.6",
+    "@ewibs/assembly": "^0.0.8",
     "rxjs": "^7.5.5",
     "ts-node": "^10.8.1"
   },
