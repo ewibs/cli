@@ -2,4 +2,4 @@
 
 # Usage
 
-`$ ewibs ./examples/simple/package.json`
+`$ ewibs ./examples/simple/simple.ewibs`
