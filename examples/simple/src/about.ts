@@ -15,7 +15,24 @@ export const meta: IComponentMeta = {
       test: { type: "string", delegation: ["text"], default: "" },
     },
   },
-  page: { url: "about/test" },
+  page: {
+    url: "about/test",
+    styles: {
+      mediaQueries: [
+        {
+          types: [{ type: "screen" }],
+          features: [{ feature: "width", value: "500px" }],
+          styles: {
+            background: [{ color: "red" }],
+            alignment: {
+              columnGap: '1'
+            }
+          },
+        },
+      ],
+      base: { background: [{ color: "green" }], border: { radii: { "top-left": '1rem' } } },
+    },
+  },
 };
 
 export const body: ComponentBody = {
@@ -25,7 +42,7 @@ export const body: ComponentBody = {
       tagName: "a",
       text: "Home",
       attributes: { href: "index.html" },
-      styles: {},
+      styles: { base: {} },
       children: [
         { ref: "components/button", io: { inputs: {} } },
         { text: "Hello world" },
@@ -39,20 +56,30 @@ export const body: ComponentBody = {
         {
           tagName: "p",
           text: "asdfdeep",
-          styles: { background: "green" },
+          styles: { base: { background: [{ color: "green" }] } },
           children: [],
         },
         { ref: "components/title", io: { inputs: { title: "Custom title" } } },
-        { ref: "components/title", io: { inputs: { title: "fafafa" } } },
+        {
+          ref: "components/title",
+          io: { inputs: { title: "Delegated title" } },
+        },
       ],
       styles: {
-        fontWeight: "bolder",
-        backgroundColor: "yellow",
-        display: "flex",
+        base: {
+          text: { fontWeight: "bolder" },
+          background: [{ color: "yellow" }],
+          alignment: {
+            type: "flex",
+            grow: '1',
+            alignContent: 'baseline',
+            justifyContent: 'flex-start'
+          }
+        },
       },
     },
     { ref: "components/button", io: { inputs: {} } },
     { ref: "components/button", io: { inputs: {} } },
   ],
-  styles: {},
+  styles: { base: {} },
 };

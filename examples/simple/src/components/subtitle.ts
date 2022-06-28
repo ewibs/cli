@@ -19,6 +19,18 @@ export const meta: IComponentMeta = {
 export const body: ComponentBody = {
   editor: { name: "subtitle" },
   tagName: "h3",
-  text: "fafafa",
-  styles: { borderBottom: "1px solid black" },
+  text: "Delegated title",
+  styles: {
+    base: {
+      border: {
+        sides: {
+          bottom: {
+            width: '1px',
+            style: 'solid',
+            color: 'black'
+          }
+        }
+      }
+    }
+  },
 };

@@ -11,13 +11,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "npm run prepare && npm link && ewibs ./examples/simple/simple.ewibs",
+    "debug:watch": "npm run prepare && npm link && ewibs watch ./examples/simple/simple.ewibs",
     "prepare": "rm -rf lib && tsc && chmod +x lib/cli.js"
   },
   "devDependencies": {
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@ewibs/assembly": "^0.0.8",
+    "@ewibs/assembly": "^0.2.5",
     "rxjs": "^7.5.5",
     "ts-node": "^10.8.1"
   },
