@@ -7,9 +7,12 @@ async function LoadAssembly(packagePath: string) {
   const assembly = new CLIAssembly(packagePath);
   const bundle = await assembly.getBundlePromise();
   bundle.export();
+  console.log('Finished exporting')
+  process.exit();
 }
 
 async function WatchAssembly(packagePath: string) {
+  console.log("Warning this mode does not work correctly yet :(")
   const assembly = new CLIAssembly(packagePath);
 
   assembly.$load.subscribe(() => {
