@@ -12,7 +12,6 @@ async function LoadAssembly(packagePath: string) {
 }
 
 async function WatchAssembly(packagePath: string) {
-  console.log("Warning this mode does not work correctly yet :(")
   const assembly = new CLIAssembly(packagePath);
 
   assembly.$load.subscribe(() => {
